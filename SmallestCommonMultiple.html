@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            function smallestCommons(arr)
+            {
+                let firstnum = arguments[0][0]; // first argument value
+                let lastnum = arguments[0][arguments[0].length - 1]; // second argument value
+                let sCArray = [];   //Array for storing the numbers in the range and the end numbers             
+                let tempArray = []; //Array for holding the indices of the numbers that are divisible
+                let productSC = 1;  //Variable for storing the LCM value being processed
+                console.log("The limit numbers as received " + firstnum + ", " + lastnum);
+
+                //##### REARRANGING / SORTING OUT THE ORDER OF THE END NUMBERS FROM LOW TO HIGH
+                if(lastnum < firstnum) //To rearrange the order of the arguments
+                {let tempnum = lastnum; lastnum = firstnum; firstnum = tempnum;}
+
+                //######## COMPLETING THE ARRAY WITH THE REQUIRED NUMBERS ######
+                for(let j = firstnum; j <= lastnum; j++) 
+                {sCArray.push(j);} //To load the array 'sCArray' with the numbers between the range and the end numbers
+                sCArray.sort(function(a, b){return a-b}); //#### Array sCArray is for storing the numbers received from the arguments ####
+                console.log("The original array is " + sCArray);
+                //######## CODE TO CARRY OUT THE FACTORISATION AND STORING OF COMMON FACTORS IN A SEPARATE ARRAY ######
+                let ReverArray = sCArray.reverse();
+                console.log("The reverse array is " + ReverArray);               
+                let prod = 0;
+                let counter = 1;
+                let i;
+                do {
+                        prod = counter * ReverArray[0] * ReverArray[1];
+
+                            for (i = 2; i < ReverArray.length; i++) 
+                            {   console.log("The modulus is " + prod % ReverArray[i]);
+                                if (prod % ReverArray[i] !== 0) 
+                                {break;}
+                            }
+
+                        console.log("The prod and the counter are "+ prod + ", "+counter);
+                        counter++;                    
+                    } 
+                    while (i !== ReverArray.length);
+                return prod;
+            }                
+                            console.log(smallestCommons([1, 5]));
+                            console.log(smallestCommons([8, 10]));
+                            //console.log(smallestCommons([23, 18]));
+        </script>
+    </body>
+</html>
