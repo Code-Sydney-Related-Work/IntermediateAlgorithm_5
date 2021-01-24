@@ -27,31 +27,7 @@
                 let productSC = 1;  //Variable for storing the LCM value being processed
                 console.log("The limit numbers as received " + firstnum + ", " + lastnum);
 
-                //##### REARRANGING / SORTING OUT THE ORDER OF THE END NUMBERS FROM LOW TO HIGH
-                if(lastnum < firstnum) //To rearrange the order of the arguments
-                {let tempnum = lastnum; lastnum = firstnum; firstnum = tempnum;}
-
-                //######## COMPLETING THE ARRAY WITH THE REQUIRED NUMBERS ######
-                for(let j = firstnum; j <= lastnum; j++) 
-                {sCArray.push(j);} //To load the array 'sCArray' with the numbers between the range and the end numbers
-                sCArray.sort(function(a, b){return a-b}); //#### Array sCArray is for storing the numbers received from the arguments ####
-                console.log("The original array is " + sCArray);
-                //######## CODE TO CARRY OUT THE FACTORISATION AND STORING OF COMMON FACTORS IN A SEPARATE ARRAY ######
-                let ReverArray = sCArray.reverse();
-                console.log("The reverse array is " + ReverArray);               
-                let prod = 0;
-                let counter = 1;
-                let i;
-                do {
-                        prod = counter * ReverArray[0] * ReverArray[1];
-
-                            for (i = 2; i < ReverArray.length; i++) 
-                            {   console.log("The modulus is " + prod % ReverArray[i]);
-                                if (prod % ReverArray[i] !== 0) 
-                                {break;}
-                            }
-
-                        console.log("The prod and the counter are "+ prod + ", "+counter);
+                XXXXXXXXXXXXXXXXXXXXXXXX     PORTION OF CODE DELETED TO PROTECT INTELLECTUAL PROPERTY  XXXXXXXXXXXXXXX
                         counter++;                    
                     } 
                     while (i !== ReverArray.length);
